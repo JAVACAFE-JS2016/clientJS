@@ -1,0 +1,28 @@
+<!--
+    해당 예제는 다음을 기법을 사용
+    - location.href를 사용하여 현재 URL을 얻어오고 location 프로퍼티를 설정함으로써 새로운 문서를 불러오는 방법
+    - History 객체의 back()과 forward() 메서드들을 사용하는 방법
+    - setTimeout()을 사용하여 함수의 호출을 예약하는 방법
+    - window.open()을 사용하여 새로운 브라우저 창을 여는 방법
+    - 한 프레임의 자바스크립트 코드를 사용하여 다른 프레임과 상호 작용하는 방법
+    - 동일 출처 정책에 의한 제약사항들에 대비하는 방법
+
+    frame alias
+    - top : 최상위 단계 frame
+    - parent : 부모 frame
+    - self : 자기 자신 frame
+    - window : 자기 자신의 window 객체, frame마다 window 객체가 생성 됨
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Frame Test</title>
+</head>
+
+    <frameset rows="*,75" >
+        <frame src="about:blank" name="main">
+        <frame src="navigation.html">
+    </frameset>
+</html>

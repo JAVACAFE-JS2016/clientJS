@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="javascript" type="text/javascript" src="./Args.js"></script>
+    <script language="javascript" type="text/javascript" src="BrowserSceenWindow.js"></script>
+    <script language="javascript" type="text/javascript" src="Open.js"></script>
+    <script language="javascript" type="text/javascript" src="Navigator.js"></script>
+    <script language="javascript" type="text/javascript" src="ScreenControl.js"></script>
+    <script language="javascript" type="text/javascript" src="RefinedBar.js"></script>
+
+</head>
+<body>
+    <button type="button" onclick="getArgs()">button</button>
+
+    <!--
+         status 프로퍼티 : 사용자가 마우스를 하이퍼링크 위로 이동시킬 때 기계에게 친숙한 URL 대신
+         연결된 문서에 대해 사람에게 친숙한 형태의 도움말을 보여줌
+         아래와 같은 코드는 더이상 동작하지 않는다.
+         사용자에게 링크의 목적지를 의도적으로 속이는데 악용되기 때문.
+         status 프로퍼티 설정 할 수 있는 기능이 금지됨
+     -->
+    <a href="help.html" onmouseover="status='도움말을 원하시면 클릭하십시오'; return true;">
+        온라인 도움말
+    </a>을 읽어보십시오
+</body>
+</html>
