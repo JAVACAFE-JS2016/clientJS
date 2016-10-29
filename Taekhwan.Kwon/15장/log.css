@@ -1,0 +1,18 @@
+#debug_log {	/* 디버그 메시지 컨테이너를 위한 스타일 */
+	background-color: #aaa;		/* 바탕색은 회색 */
+	border: solid black 2px;		/* 테두리는 검은색 */
+	overflow: auto;					/* 스크롤바의 스타일 */
+	width: 75%;							/* 창의 너비보다 넓지 않게 */
+	height: 300px;						/* 위아래 공간을 너무 많이 차지하지 않게 한다. */
+}
+
+#debug_log:before {		/* 로깅 내용에 제목을 적어 넣는다. */
+	content: "Debugging Messages";
+	display: block;
+	text-align: center;
+	font: bold 18pt sans-serif;
+}
+
+.debug_message {	/* 디버깅 메시지들 사이에 가는 검은색 선을 집어넣는다. */
+	border-bottom: solid black 1px;
+}

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>title</title>
+	</head>
+	
+	<body>
+		<div name ="ddd_div" id ="d" class="ddd">
+			<a id="bb">bbbb dd ww</a>
+			<a id="aa">aaaa bbb ccc</a>			
+			<a id="cc">cccc aa dd</a>
+		</div>
+		<div name ="kkk_div" id ="kk" class="kkk">
+			<a name="b_a" id="b">a</a>
+			<a name="a_b" id="a">b</a>
+			<a name="c_c" id="c">c</a>
+		</div>
+		<div name ="yyy_div" id ="yy" class="yyy"><a id="b3">a3</a><a id="a3">b3</a><a id="c3">c3</a></div>
+
+		<a href="javascript:
+			var q;
+			if(window.getSelection) q = window.getSelection().toString();
+			else if(document.getSelection) q = document.getSelection();
+			else if(document.selection) q = document.selection.createRange().text;
+			void window.open('http://en.wikipedia.org/wiki/' + q);"
+		>
+		Look Up Selected Text In Wikipedia
+	</a>
+	</body>
+</html>
