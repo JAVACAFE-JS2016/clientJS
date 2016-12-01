@@ -1,0 +1,53 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		<div id='mydiv'>
+			<form id='myform'>
+				<input id="b1" type="button" value="button1" onclick="console.log(this.value);console.log('attribute 등록 방식')">
+				<input id="b2" type="button" value="button2">
+				<input id="b3" type="button" value="button3">
+				<input id="removeE" type="button" value="removeEventHandler">
+				<input id="eventButton" type="button" value="event">
+				<input type='text'>
+			</form>
+		</div>
+
+		<script>
+			/**
+			 * 	이벤트 처리기 등록
+			 * 	1. attribute에 등록
+			 * 	2. 자바스크립트 코드의 객체 프로퍼티에 등록
+			 * 	3. addEventListener를 통한 등록
+			 * */
+			var b2 = document.getElementById("b2");
+			b2.onclick = function(e){
+				console.log(e.target.value);
+				console.log(this);
+				console.log("프로퍼티 등록 방식");
+			};
+			var myEventHandler = function(e){
+				alert("addEventListener 방식의 이벤트 핸들러2");
+			};
+			var b3 = document.getElementById("b3");
+			b3.addEventListener("click", function(e){
+				console.log(e.target.value);
+				console.log(this);
+				console.log("addEventListener 방식");
+			});
+			b3.addEventListener("click", myEventHandler);
+
+			var removeE = document.getElementById("removeE");
+			removeE.addEventListener("click", function(e){
+				b3.removeEventListener("click", myEventHandler);
+			})
+
+			var eventInput = document.getElementById("eventButton");
+			eventInput.addEventListener("click",function(e){
+				console.log(e);
+			});
+
+		</script>
+	</body>
+</html>

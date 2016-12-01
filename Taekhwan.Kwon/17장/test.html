@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>title</title>
+	</head>
+	
+	<body>
+		<div id ="d" class="ddd">
+			<a id="bb">bbbb dd ww</a>
+			<a id="aa">aaaa bbb ccc</a>			
+			<a id="cc">cccc aa dd</a>
+		</div>
+		<a href="javascript:
+			var q;
+			if(window.getSelection) q = window.getSelection().toString();
+			else if(document.getSelection) q = document.getSelection();
+			else if(document.selection) q = document.selection.createRange().text;
+			void window.open('http://en.wikipedia.org/wiki/' + q);"
+		>
+		Look Up Selected Text In Wikipedia
+	</a>
+	</body>
+</html>

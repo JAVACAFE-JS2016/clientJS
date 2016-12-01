@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Tooltip test</title>
+    <style>
+        .tooltipShadow{
+            background: url(shadow.png);    /* 반투명한 그림자 */
+       }
+
+       .tooltipContent{
+           left: -4px; top: -4px;       /* 화면에 보여줄 그림자의 크기 */
+           background-color: #ff0;      /* 노란색 배경 */
+           border: solid black 1px;     /* 가느라단 검은색 테두리 */
+           padding: 5px;
+           font: bold 10pt sans-serif;  /* 작고 굵은 폰트 */
+      }
+    </style>
+
+</head>
+<body>
+    <script src="Geometry.js" ></script>
+    <script src="Tooltip.js" ></script>
+
+    <p>a</p>
+    <p>b</p>
+    <p id="p3" tooltip="ccccccc">ccccccc</p>
+
+    <script>
+        var p3 = document.getElementById("p3");
+        var myhandler = function (e) {
+            Tooltip.schedule(this, e)
+        };
+
+        p3.addEventListener("mouseover", myhandler,false);
+
+        var myTooltip = Tooltip();
+    </script>
+</body>
+</html>

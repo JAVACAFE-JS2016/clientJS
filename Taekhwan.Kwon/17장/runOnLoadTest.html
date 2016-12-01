@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>runOnLoad Test</title>
+    <script src="runOnLoad.js"></script>
+    <script>
+        var f1 = function(){
+            console.log("f1 executed");
+        }
+        var f2 = function () {
+            console.log("f2 executed");
+        }
+        runOnLoad(f1);
+        runOnLoad(f2);
+
+    </script>
+</head>
+<body>
+    <button id="b1">button1</button>
+    <button id="b2">button2</button>
+
+
+</body>
+</html>

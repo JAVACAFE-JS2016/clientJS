@@ -1,0 +1,66 @@
+
+<html>
+	<head>
+		<title>Event Test</title>
+	</head>
+	<style>
+		p {
+			font: 15 Gulim;
+			color:red
+		}
+	</style>
+	<body>
+		<input type="button" value="Press Me" onclick="alert('thanks');">
+		<p>confirmLink 테스트<p>
+			<a href='aaa'>a event</a>
+
+		<p>이벤트 처리기 반환값<p>
+			<!-- 	아무것도 입력되지 않은 폼이 제출되지 않게 하는 코드
+					브라우저의 이벤트를 동작하지 않도록 하려면 false를 반환
+			-->
+		<form action = "search.cgi" onsubmit="if (this.elements[0].value.length==0) return false;">
+			<input type="text">
+			<input type="submit">
+		</form>
+
+		<p> 이벤트 처리기의 유효 범위<p>
+			<!--
+					자바스크립트 함수는 자신을 호출한 유효 범위가 아닌 자신이 정의된 유효 범위 내에서 실행 됨
+					HTML 어트리뷰트의 값을 자바스크립트 코드 문자열로 설정하여 이벤트 처리기를 정의하면
+					암묵적으로 자바스크립트 함수를 정의하는 것. 따라서 이 함수의 유효범위는 일반적으로 정의된 다른 전역 자바스크립트 함수와 다르다.
+					유효 범위 체인의 시작 부분은 이벤트 처리기를 호출한 객체가 된다.
+					이벤트 처리기로 전달되는 인자는 이벤트 처리기 안에 선언되어 있는 지역 변수들처럼 이 유효 범위 체인에 정의된다.
+			-->
+		<form id ='eventSope'>
+			<!-- 	이벤트 처리기에서 this는 이벤트의 대상 엘리먼트를 참조
+					이벤트 처리기의 유효 범위 체인은 처리기를 정의한 객체에서 끝나지 않고 포함 관계의 계층 구조를 따라 계속 연결되며
+					최소한 버튼이 있는 HTML <form> 엘리먼트와 폼이 있는 Document 객체가 여기에 포함된다.
+					유효 범위 체인의 마지막 객체는 Window 객체. 이는 Window 객체가 항상 클라이언트 측 자바스크립트에 포함되기 때문.
+			-->
+			<input id="b1" type="button" value="Button 1" onclick="alert(this.form.b2.value);">
+			<input id="b2" type="button" value="Button 2" onclick="alert(form.b1.value);">
+			<input id="b3" type="button" value="Button 3" onclick="alert(b4.value);">
+			<input id="b4" type="button" value="Button 4" onclick="alert(getElementById('b3').value);">
+			<input id="b5" type="button" value="Button 5" onclick="alert(this);">
+			<!--
+					var form1 = document.getElementById('eventSope');
+
+					form1.open = function(){
+						console.log("form1 open()");
+					}
+					var b3 = document.getElementById('b3');
+					b3.onclick = function(){
+						with(document){
+							with(this.form){
+								with(this){
+									alert(b4.value);
+									open();
+								}
+							}
+						}
+					}
+			-->
+		</form>
+	</body>
+
+</html>
